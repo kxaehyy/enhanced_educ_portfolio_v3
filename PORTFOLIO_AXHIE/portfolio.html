@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">A<span>X</span>HIE.</div>
+    
+    <div class="menu-toggle" id="mobile-menu">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <ul id="nav-list">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#" onclick="logout()" style="color: #ff4d4d;">Logout</a></li>
+    </ul>
+  </nav>
+
+  <section class="projects">
+    <h1 class="section-title">MY <span>PROJECTS</span></h1>
+
+    <div class="portfolio-grid">
+      <div class="project-card">
+        <div class="p-img">
+          <img src="images/p1.png" alt="Basic Login Form">
+        </div>
+        <div class="p-info">
+          <h2>Basic Login Form</h2>
+          <p class="description">I created this login interface with the goal of balancing a high-contrast, professional aesthetic with a clean, functional design, ensuring the registration and login process feels intuitive for the user.</p>
+          <button class="show-more">Show More</button>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="p-img">
+          <img src="images/p2.png" alt="Assistant Tool">
+        </div>
+        <div class="p-info">
+          <h2>Assistant Tool</h2>
+          <p class="description">This assistant tool was designed to help streamline tasks and improve productivity by automating repetitive processes and organizing data efficiently.</p>
+          <button class="show-more">Show More</button>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="p-img">
+          <img src="images/p3.png" alt="Educational Portfolio">
+        </div>
+        <div class="p-info">
+          <h2>Educational Portfolio</h2>
+          <p class="description">An educational portfolio showcasing my academic projects, creative outputs, and various web design experiments built during my 2nd year.</p>
+          <button class="show-more">Show More</button>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="p-img">
+          <img src="images/p4.png" alt="Home and Story Page">
+        </div>
+        <div class="p-info">
+          <h2>Home and Story Page</h2>
+          <p class="description">A creative home and story page layout built with responsive design principles, engaging visuals, and smooth user navigation.</p>
+          <button class="show-more">Show More</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="media-section">
+      <h1 class="section-title">COLLE<span>CTION</span></h1>
+      <div class="collection-container">
+        <div class="media-box">
+          <h2><i class="fab fa-tiktok"></i> Tiktok Video</h2>
+          <video controls>
+            <source src="uploads/vid.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <div class="media-box">
+          <h2><i class="fas fa-music"></i> Music</h2>
+          <div class="music-info">
+            <h3>Libu - Libong Buwan</h3>
+            <p>Kyle Raphael</p>
+          </div>
+          <audio controls>
+            <source src="uploads/aud.mp3" type="audio/mpeg">
+          </audio>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2026 AXHIE. All Rights Reserved.</p>
+      <div class="socials">
+        <a href="#"><i class="fab fa-facebook"></i></a>
+        <a href="#"><i class="fab fa-github"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
+
+<script>
+    const menu = document.querySelector('#mobile-menu');
+    const navList = document.querySelector('#nav-list');
+
+    if (menu) { 
+        menu.addEventListener('click', () => {
+            navList.classList.toggle('active'); 
+            const icon = menu.querySelector('i');
+            icon.classList.toggle('fa-bars');
+            icon.classList.toggle('fa-times');
+        });
+    }
+
+    document.querySelectorAll('.show-more').forEach(button => {
+        button.addEventListener('click', () => {
+            const description = button.previousElementSibling;
+            description.classList.toggle('active');
+            button.textContent = description.classList.contains('active') ? 'Show Less' : 'Show More';
+        });
+    });
+  </script>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
