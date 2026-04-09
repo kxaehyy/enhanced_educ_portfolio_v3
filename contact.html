@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">A<span>X</span>HIE.</div>
+    
+    <div class="menu-toggle" id="mobile-menu">
+        <i class="fas fa-bars"></i>
+    </div>
+
+    <ul id="nav-list">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="#" onclick="logout()" style="color: #ff4d4d;">Logout</a></li>
+    </ul>
+  </nav>
+
+  <section class="contact-section">
+    <div class="contact-container">
+      <div class="contact-header">
+        <h1>GET IN <span>TOUCH</span></h1>
+        <p>Need anything? Send me a message!</p>
+      </div>
+
+      <div class="contact-wrapper">
+        <div class="contact-form-box">
+          <form action="#">
+            <div class="input-group">
+              <span><i class="fas fa-user"></i> Full Name</span>
+              <input type="text" placeholder="Juan Dela Cruz" required>
+            </div>
+
+            <div class="input-group">
+              <span><i class="fas fa-envelope"></i> Email Address</span>
+              <input type="email" placeholder="juan@example.com" required>
+            </div>
+
+            <div class="input-group">
+              <span><i class="fas fa-comment-dots"></i> Your Message</span>
+              <textarea placeholder="Write your message here..." rows="5" required></textarea>
+            </div>
+            
+            <button type="submit" class="contact-btn">SEND MESSAGE <i class="fas fa-paper-plane"></i></button>
+          </form>
+        </div>
+
+        <div class="contact-details">
+          <div class="detail-card">
+            <div class="icon-box"><i class="fas fa-map-marker-alt"></i></div>
+            <div class="text-box">
+              <h3>Address</h3>
+              <p>Tandoc Talugtug, Nueva Ecija</p>
+            </div>
+          </div>
+
+          <div class="detail-card">
+            <div class="icon-box"><i class="fas fa-phone-alt"></i></div>
+            <div class="text-box">
+              <h3>Phone Number</h3>
+              <p>+63 994 031 5782</p>
+            </div>
+          </div>
+
+          <div class="detail-card">
+            <div class="icon-box"><i class="fas fa-envelope"></i></div>
+            <div class="text-box">
+              <h3>Email</h3>
+              <p>angelbonsobre01@gmail.com</p>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-content">
+      <p>&copy; 2026 AXHIE. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    const menu = document.querySelector('#mobile-menu');
+    const navList = document.querySelector('#nav-list');
+
+    menu.addEventListener('click', () => {
+        navList.classList.toggle('active'); 
+        menu.querySelector('i').classList.toggle('fa-bars');
+        menu.querySelector('i').classList.toggle('fa-times');
+    });
+    document.querySelectorAll('.show-more').forEach(button => {
+        button.addEventListener('click', () => {
+            const description = button.previousElementSibling;
+            description.classList.toggle('active');
+            button.textContent = description.classList.contains('active') ? 'Show Less' : 'Show More';
+        });
+    });
+  </script>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

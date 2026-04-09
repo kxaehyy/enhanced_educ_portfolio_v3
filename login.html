@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <section class="form-section">
+        <div class="form-box">
+            <h1><span>LOG</span>IN</h1>
+            <p class="subtitle">Welcome back! Please login.</p>
+            
+            <form id="loginForm">
+                <div class="input">
+                    <span>Email</span>
+                    <input type="email" id="loginUser" placeholder="Enter your email" required>
+                </div>
+                <div class="input">
+                    <span>Password</span>
+                    <input type="password" id="loginPass" placeholder="••••••••" required>
+                </div>
+                
+                <button type="submit" class="btn">ACCESS ACCOUNT</button>
+                
+                <div class="separator"><span>OR SIGN IN WITH</span></div>
+
+                <div id="googleBtn"></div>
+
+                <p class="switch-form">New to AXHIE? <a href="index.html">Create an Account</a></p>
+            </form>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
